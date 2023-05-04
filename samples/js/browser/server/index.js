@@ -35,6 +35,7 @@
 
             try {
                 const tokenResponse = await axios.post(`https://${speechRegion}.api.cognitive.microsoft.com/sts/v1.0/issueToken`, null, headers);
+                console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", tokenResponse)
                 res.send({ token: tokenResponse.data, region: speechRegion });
             } catch (err) {
                 res.status(401).send('There was an error authorizing your speech key.');
